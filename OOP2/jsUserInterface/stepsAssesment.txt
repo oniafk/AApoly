@@ -1,0 +1,28 @@
+1.Chat server view (user)
+1.1 create chat view with a text area for the chat messages that display messages
+1.2 create a text input for the user to type in their message
+1.3 create a button to send the message
+
+2.client Chat view (admin)
+2.1 create list of users mocked for now
+2.2 create a view that allows to select a user to chat with as aviable users
+2.3 create a button that allows to connect as a user to the chat server ( user selected from the list)
+
+3. create a server that will handle the chat messages and users connected
+3.1 handle status of the users connected
+3.2 handle the messages sent by the users
+
+4. users interaction
+4.1 client chat will select the aviable user to chat with 
+4.2 the client chat will be able to see messages that are sent by the user they are chatting with
+4.3 chat server will be a chat window that will be attached to a user that is connected and only needs to see and send messages to the user they are chatting with( client chat )
+
+5.server interaction
+5.1 server will handle the messages sent by the users
+5.2 server will handle the status of the users connected
+5.3 server will handle the connection of the users to the chat server
+5.4 server will do requesto to db to get the users that are aviable to chat with
+5.5 the data base only needs to have the users that are aviable to chat with ,  a field that will have 20 characters that will be the user id (string)
+
+6. documentation,
+6.1 create a single page with html to show the information about how to connect to the chat server
