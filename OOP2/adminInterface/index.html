@@ -208,5 +208,45 @@
         <p></p>
       </li>
     </template>
+
+    <script>
+      document.querySelector('.send-button').addEventListener('click', function() {
+          const message = document.querySelector('#message-input').value;
+          if (message) {
+              fetch('backend.php', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ message: message })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  renderMessages(data);
+              });
+          }
+      });
+
+      function fetchMessages() {
+          fetch('backend.php')
+              .then(response => response.json())
+              .then(data => {
+                  renderMessages(data);
+              });
+      }
+
+      function renderMessages(messages) {
+          const messagesList = document.querySelector('#messages-list');
+          messagesList.innerHTML = '';
+          messages.forEach(msg => {
+              const li = document.createElement('li');
+              li.textContent = msg;
+              messagesList.appendChild(li);
+          });
+      }
+
+      // Call fetchMessages on page load to get the message history
+      window.onload = fetchMessages;
+  </script>
   </body>
 </html>™
